@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-bg-dark: #0B1320;
+    --color-surface-dark: #111D33;
+    --color-surface-card: #15223C;
+    --color-primary-blue: #0284C7;
+    --color-copper: #D97706;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  body {
+    background-color: #0B1320;
+    color: #F1F5F9;
+    overflow-x: hidden;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0B1320;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1E293B;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #0284C7;
+  }
+}
+
+.font-mono-numbers {
+  font-family: 'Space Grotesk', monospace;
+}
+
+/* Glassmorphism and technical borders */
+.tech-card {
+  background: rgba(17, 29, 51, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tech-card:hover {
+  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow: 0 10px 30px -10px rgba(2, 132, 199, 0.2);
+}
+
+.tech-card-copper {
+  background: rgba(21, 34, 60, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(217, 119, 6, 0.2);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tech-card-copper:hover {
+  border-color: rgba(245, 158, 11, 0.5);
+  box-shadow: 0 10px 30px -10px rgba(217, 119, 6, 0.25);
+}
+
+.glow-blue {
+  box-shadow: 0 0 25px -5px rgba(2, 132, 199, 0.4);
+}
+
+.glow-copper {
+  box-shadow: 0 0 25px -5px rgba(217, 119, 6, 0.35);
+}
+
+/* Technical grid background pattern */
+.bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.bg-dot-pattern {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
