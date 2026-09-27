@@ -10,7 +10,6 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
 
   const navLinks = [
     { label: 'Роботи', href: '#works' },
-    { label: 'Як це працює', href: '#how-it-works' },
     { label: 'Послуги та ціни', href: '#services' },
     { label: 'Запис на виїзд', href: '#booking' },
     { label: 'Контакти', href: '#contacts' },

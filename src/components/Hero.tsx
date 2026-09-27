@@ -60,10 +60,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
               </button>
 
               <a
-                href="#how-it-works"
+                href="#works"
                 className="border border-black text-black hover:bg-neutral-100 text-xs font-bold uppercase tracking-wider px-8 py-4 flex items-center justify-center gap-2 transition-colors"
               >
-                <span>Як це працює</span>
+                <span>Дивитися роботи</span>
                 <ArrowDown className="w-4 h-4" />
               </a>
             </div>
@@ -95,16 +95,16 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
               <div className="relative aspect-[4/4] overflow-hidden bg-neutral-200">
                 <img
                   src={`${import.meta.env.BASE_URL}images/boiler-system.jpg`}
-                  alt="«Ваш Сантехнік» — монтаж водонагрівача, бойлера та мідних труб"
+                  alt="«Ваш Сантехнік» — встановлення бойлера та простих поліпропіленових труб"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-white border-t border-black p-4 text-black">
                   <div className="flex items-center justify-between text-xs font-mono-numbers uppercase tracking-wider">
-                    <span className="font-bold">«Ваш Сантехнік» • Обв'язка бойлера</span>
+                    <span className="font-bold">«Ваш Сантехнік» • Монтаж бойлера</span>
                     <span>Київ</span>
                   </div>
                   <p className="text-xs text-neutral-600 mt-1">
-                    Монтаж бойлера непрямого нагріву, мідних магістралей, циркуляційних насосів та групи безпеки.
+                    Підключення бойлера на простих поліпропіленових трубах (PPR), встановлення запірних кранів, манометра та клапана скидання.
                   </p>
                 </div>
               </div>
