@@ -38,8 +38,8 @@ export const portfolioData: PortfolioProject[] = [
     categoryLabel: 'Опалення',
     location: 'Київська обл., Гореничі',
     materials: ['Труби PEX/PE-RT', 'Колектор з витратомірами', 'Циркуляційний насос Wilo', 'Демпферна стрічка'],
-    coverImage: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80',
-    description: 'Укладання 5 контурів водяної теплої підлоги, підключення до регулюючого колектора, опресування системи повітрям та водою під тиском 6 бар.',
+    coverImage: `${import.meta.env.BASE_URL}images/underfloor-heating.jpg`,
+    description: 'Укладання контурів водяної теплої підлоги, підключення до регулюючого колектора, опресування системи повітрям та водою під тиском 6 бар.',
   },
   {
     id: 'pumps-station-grundfos',
@@ -53,12 +53,12 @@ export const portfolioData: PortfolioProject[] = [
   },
   {
     id: 'apartment-water-heater-atlantic',
-    title: 'Термінова заміна електричного бойлера Atlantic 80л',
+    title: 'Монтаж та заміна настінного водонагрівача',
     category: 'boilers',
     categoryLabel: 'Бойлери',
     location: 'Київ, Позняки',
-    materials: ['Бойлер Atlantic Steatite 80л', 'Редуктор тиску Caleffi', 'Нержавіюча гофра Lavita', 'Кран скидання тиску'],
-    coverImage: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80',
-    description: 'Оперативний демонтаж старого потіклого бойлера, надійне закріплення нового бака, підключення запобіжного клапана та редуктора тиску за 2 години.',
+    materials: ['Водонагрівач накопичувальний', 'Поліпропіленові труби PPR', 'Редуктор тиску Caleffi', 'Кран скидання тиску'],
+    coverImage: `${import.meta.env.BASE_URL}images/water-heater-compact.jpg`,
+    description: 'Акуратний монтаж водонагрівача в технічній ніші, підключення поліпропіленових труб, редуктора тиску та запобіжного клапана.',
   },
 ];
