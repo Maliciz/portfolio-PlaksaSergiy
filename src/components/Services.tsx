@@ -16,18 +16,18 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
         <div className="mb-12 pb-6 border-b border-neutral-200 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <div>
             <span className="font-mono-numbers text-xs uppercase tracking-architectural text-neutral-500 block mb-2">
-              Прайс сантехнічних робіт
+              Послуги майстра • «Ваш Сантехнік»
             </span>
             <h2 className="text-3xl sm:text-5xl font-display font-bold text-black uppercase tracking-tight">
-              Послуги та орієнтовні ціни
+              Послуги сантехніка
             </h2>
             <p className="mt-2 text-neutral-600 text-sm sm:text-base font-normal">
-              Фіксовані розцінки без накруток після початку монтажу. Безкоштовний прорахунок по фото або кресленнях.
+              Повний комплекс робіт з монтажу, заміни та обслуговування сантехнічного обладнання.
             </p>
           </div>
 
           <div className="text-xs font-mono-numbers text-neutral-700 bg-white border border-neutral-300 p-3 shrink-0">
-            Остаточна ціна фіксується до початку робіт
+            Безкоштовна консультація та підбір обладнання
           </div>
         </div>
 
@@ -39,19 +39,14 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
               className="bg-white border border-neutral-300 p-6 sm:p-8 flex flex-col justify-between hover:border-black transition-colors"
             >
               <div>
-                {/* Header with index & price */}
+                {/* Header with index */}
                 <div className="flex items-center justify-between pb-4 mb-4 border-b border-neutral-100">
-                  <span className="font-mono-numbers text-xs text-neutral-400">
-                    0{index + 1}
+                  <span className="font-mono-numbers text-xs font-bold text-black">
+                    [0{index + 1}]
                   </span>
-                  <div className="text-right">
-                    <span className="text-[10px] uppercase font-mono-numbers text-neutral-500 block">
-                      Вартість робіт
-                    </span>
-                    <span className="font-mono-numbers text-lg font-bold text-black">
-                      від {service.priceFrom.toLocaleString('uk-UA')} {service.priceUnit}
-                    </span>
-                  </div>
+                  <span className="text-[10px] uppercase font-mono-numbers text-neutral-500 bg-neutral-100 border border-neutral-200 px-2 py-0.5">
+                    Послуга
+                  </span>
                 </div>
 
                 {/* Service Title */}
