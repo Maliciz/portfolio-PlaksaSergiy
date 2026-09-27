@@ -14,7 +14,8 @@ export const Portfolio: React.FC<PortfolioProps> = ({ onBookProject }) => {
     { id: 'all' as ServiceCategory, label: 'Всі роботи' },
     { id: 'boilers' as ServiceCategory, label: 'Бойлери' },
     { id: 'pumps' as ServiceCategory, label: 'Насоси' },
-    { id: 'pipes' as ServiceCategory, label: 'Труби' },
+    { id: 'pipes' as ServiceCategory, label: 'Труби та колектори' },
+    { id: 'bathrooms' as ServiceCategory, label: 'Унітази та інсталяції' },
     { id: 'underfloor' as ServiceCategory, label: 'Опалення' },
   ];
 
@@ -30,13 +31,13 @@ export const Portfolio: React.FC<PortfolioProps> = ({ onBookProject }) => {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 pb-6 border-b border-neutral-200">
           <div>
             <span className="font-mono-numbers text-xs uppercase tracking-architectural text-neutral-500 block mb-2">
-              Портфоліо робіт
+              Портфоліо • «Ваш Сантехнік»
             </span>
             <h2 className="text-3xl sm:text-5xl font-display font-bold text-black uppercase tracking-tight">
               Виконані роботи майстра
             </h2>
             <p className="mt-2 text-neutral-600 text-sm sm:text-base max-w-xl font-normal">
-              Реальні фотографії встановлених бойлерів, насосних станцій, труб та систем опалення в Києві та області.
+              Реальні фотографії встановлених бойлерів, інсталяцій, унітазів, насосних станцій, труб та систем опалення в Києві та області.
             </p>
           </div>
 

@@ -103,15 +103,15 @@ const BookingFormContent: React.FC<BookingFormContentProps> = ({
         </IconButton>
 
         <span className="font-mono-numbers text-[10px] uppercase tracking-architectural text-neutral-500 block mb-1">
-          Запис до сантехніка
+          «Ваш Сантехнік» • Сергій Плакса
         </span>
 
         <DialogTitle className="p-0 text-2xl font-display font-bold text-black uppercase tracking-tight">
-          Виклик майстра на замір
+          Виклик майстра додому
         </DialogTitle>
         
         <p className="text-xs text-neutral-600 mt-1 font-normal">
-          Сергій Плакса зв'яжеться з вами протягом 15 хвилин для узгодження виїзду.
+          Прямий контакт з майстром. Зателефоную протягом 15 хвилин для консультації та виїзду.
         </p>
       </div>
 

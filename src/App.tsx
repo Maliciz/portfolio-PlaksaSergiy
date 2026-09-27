@@ -4,6 +4,7 @@ import { whiteMuiTheme } from './theme/muiTheme';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { Portfolio } from './components/Portfolio';
+import { HowItWorks } from './components/HowItWorks';
 import { Services } from './components/Services';
 import { BookingSection } from './components/BookingSection';
 import { Footer } from './components/Footer';
@@ -36,6 +37,9 @@ export const App: React.FC = () => {
 
           {/* Real Plumber Works Showcase (Pumps, Boilers, Pipes, Heating) */}
           <Portfolio onBookProject={(title) => handleOpenBooking(`Робота схожа на: ${title}`)} />
+
+          {/* Engineering Breakdown: How Modern Plumbing Works */}
+          <HowItWorks onOpenBooking={handleOpenBooking} />
 
           {/* Core Services & Transparent Prices */}
           <Services onSelectService={(serviceTitle) => handleOpenBooking(serviceTitle)} />

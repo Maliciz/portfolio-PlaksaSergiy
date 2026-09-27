@@ -14,14 +14,14 @@ export const Footer: React.FC = () => {
           
           {/* Col 1: Plumber Bio */}
           <div>
-            <span className="font-display font-bold text-xl uppercase tracking-tight block">
-              Сергій Плакса
+            <span className="font-display font-extrabold text-xl uppercase tracking-tight block">
+              «Ваш Сантехнік»
             </span>
             <span className="font-mono-numbers text-xs text-neutral-500 uppercase tracking-architectural block mt-1 mb-4">
-              Приватний сантехнік • Київ та область
+              Сергій Плакса • Приватний майстер
             </span>
             <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed font-normal">
-              Встановлення та заміна бойлерів, монтаж свердловинних та циркуляційних насосів, насосних станцій, розведення труб та опалення.
+              Професійний монтаж та заміна бойлерів, насосних станцій, розведення мідних та PEX труб, встановлення інсталяцій, підвісних унітазів та систем опалення по Києву та області.
             </p>
           </div>
 

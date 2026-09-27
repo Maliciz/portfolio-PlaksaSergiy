@@ -73,13 +73,13 @@ export const BookingSection: React.FC<BookingSectionProps> = ({ initialService =
           
           <div className="mb-8 pb-6 border-b border-neutral-200">
             <span className="font-mono-numbers text-xs uppercase tracking-architectural text-neutral-500 block mb-2">
-              Онлайн-запис на виїзд
+              «Ваш Сантехнік» • Онлайн-запис
             </span>
             <h2 className="text-3xl sm:text-4xl font-display font-bold text-black uppercase tracking-tight">
-              Запис клієнта на замір та консультацію
+              Запис на виїзд майстра та консультацію
             </h2>
             <p className="mt-2 text-neutral-600 text-sm sm:text-base font-normal">
-              Залиште номер телефону та вкажіть, що потрібно зробити. Я передзвоню протягом 15 хвилин для уточнення деталей та часу виїзду.
+              Залиште номер телефону та вкажіть ваше завдання (бойлер, насос, труби, унітаз, опалення). Сергій Плакса передзвонить протягом 15 хвилин.
             </p>
           </div>
 

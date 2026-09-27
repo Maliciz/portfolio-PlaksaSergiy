@@ -11,22 +11,24 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Breadcrumb / Top Tag */}
-        <div className="mb-6 flex items-center gap-2 font-mono-numbers text-xs uppercase tracking-architectural text-neutral-500">
-          <span>Київ • Всі райони та передмістя</span>
+        <div className="mb-6 flex flex-wrap items-center gap-2 font-mono-numbers text-xs uppercase tracking-architectural text-neutral-500">
+          <span className="bg-black text-white px-2 py-0.5 font-bold">ВАШ САНТЕХНІК</span>
+          <span>•</span>
+          <span>Сергій Плакса</span>
           <span>/</span>
-          <span>Приватний сантехнік Сергій Плакса</span>
+          <span>Київ та передмістя</span>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Left Column: Headlines & Actions */}
           <div className="lg:col-span-7 flex flex-col items-start">
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-display font-extrabold text-black tracking-tight leading-[1.05] uppercase mb-6">
-              Сантехнік у Києві: бойлери, насоси, опалення, труби
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-display font-extrabold text-black tracking-tight leading-[1.02] uppercase mb-6">
+              «Ваш Сантехнік» у Києві: бойлери, насоси, труби, унітази
             </h1>
 
             <p className="text-base sm:text-lg text-neutral-600 leading-relaxed font-normal max-w-2xl mb-8">
-              Професійний монтаж та заміна бойлерів, насосних станцій, циркуляційних насосів, радіаторів, теплої підлоги та труб водопостачання. Працюю чесно, акуратно та за фіксованою ціною.
+              Приватний майстер Сергій Плакса. Професійний монтаж та заміна бойлерів, насосних станцій, прихованих інсталяцій, підвісних унітазів, колекторного розведення труб та систем опалення. Без посередників, акуратно та за фіксованим кошторисом.
             </p>
 
             {/* Quick Specialization Tags */}
@@ -34,9 +36,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
               {[
                 'Встановлення бойлерів',
                 'Насоси та автоматика',
-                'Розведення труб Rehau',
+                'Колектори та труби',
+                'Підвісні унітази та інсталяції',
                 'Опалення та радіатори',
-                'Монтаж інсталяцій',
               ].map((tag, idx) => (
                 <span
                   key={idx}
@@ -53,15 +55,15 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
                 onClick={() => onOpenBooking('Консультація / Замір')}
                 className="bg-black hover:bg-neutral-800 text-white text-xs font-bold uppercase tracking-wider px-8 py-4 flex items-center justify-center gap-2 transition-colors"
               >
-                <span>Записатися на виїзд майстра</span>
+                <span>Викликати майстра</span>
                 <ArrowUpRight className="w-4 h-4" />
               </button>
 
               <a
-                href="#works"
+                href="#how-it-works"
                 className="border border-black text-black hover:bg-neutral-100 text-xs font-bold uppercase tracking-wider px-8 py-4 flex items-center justify-center gap-2 transition-colors"
               >
-                <span>Дивитися роботи</span>
+                <span>Як це працює</span>
                 <ArrowDown className="w-4 h-4" />
               </a>
             </div>
@@ -74,7 +76,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
               </div>
               <div className="flex items-center gap-2">
                 <Check className="w-4 h-4 text-black shrink-0" />
-                <span>Швидкий виїзд</span>
+                <span>Прямий контакт</span>
               </div>
               <div className="flex items-center gap-2">
                 <Check className="w-4 h-4 text-black shrink-0" />
@@ -82,7 +84,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
               </div>
               <div className="flex items-center gap-2">
                 <Check className="w-4 h-4 text-black shrink-0" />
-                <span>Гарантія на роботу</span>
+                <span>Гарантія 3 роки</span>
               </div>
             </div>
           </div>
@@ -92,17 +94,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
             <div className="border border-black p-2 bg-neutral-50 shadow-none">
               <div className="relative aspect-[4/4] overflow-hidden bg-neutral-200">
                 <img
-                  src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&w=1200&q=80"
-                  alt="Монтаж бойлера та насосного обладнання сантехніком"
-                  className="w-full h-full object-cover grayscale-[0.2]"
+                  src={`${import.meta.env.BASE_URL}images/boiler-system.jpg`}
+                  alt="«Ваш Сантехнік» — монтаж водонагрівача, бойлера та мідних труб"
+                  className="w-full h-full object-cover"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-white border-t border-black p-4 text-black">
                   <div className="flex items-center justify-between text-xs font-mono-numbers uppercase tracking-wider">
-                    <span className="font-bold">Монтаж бойлера та насосів</span>
-                    <span>Київ, 2024</span>
+                    <span className="font-bold">«Ваш Сантехнік» • Обв'язка бойлера</span>
+                    <span>Київ</span>
                   </div>
                   <p className="text-xs text-neutral-600 mt-1">
-                    Обв'язка бака непрямого нагріву, підключення циркуляційного насоса та автоматики тиску.
+                    Монтаж бойлера непрямого нагріву, мідних магістралей, циркуляційних насосів та групи безпеки.
                   </p>
                 </div>
               </div>

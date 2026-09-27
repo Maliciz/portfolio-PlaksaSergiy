@@ -10,6 +10,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
 
   const navLinks = [
     { label: 'Роботи', href: '#works' },
+    { label: 'Як це працює', href: '#how-it-works' },
     { label: 'Послуги та ціни', href: '#services' },
     { label: 'Запис на виїзд', href: '#booking' },
     { label: 'Контакти', href: '#contacts' },
@@ -21,7 +22,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
       <div className="bg-neutral-100 border-b border-neutral-200 py-1.5 px-4 text-xs font-mono-numbers text-neutral-600 flex items-center justify-between max-w-7xl mx-auto">
         <span className="flex items-center gap-2">
           <span className="w-2 h-2 bg-black" />
-          <span>Київ та Київська область • Виїзд без вихідних з 08:00 до 20:00</span>
+          <span>«Ваш Сантехнік» — Київ та область • Виїзд щодня з 08:00 до 20:00</span>
         </span>
         <a 
           href="tel:+380678904433" 
@@ -32,16 +33,24 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
       </div>
 
       {/* Main navigation */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between">
         
         {/* Brand */}
-        <a href="#" className="flex flex-col">
-          <span className="font-display font-bold text-xl sm:text-2xl text-black tracking-tight uppercase">
-            Сергій Плакса
-          </span>
-          <span className="font-mono-numbers text-[11px] text-neutral-500 uppercase tracking-architectural">
-            Сантехнік • Бойлери, насоси, опалення, труби
-          </span>
+        <a href="#" className="flex items-center gap-3 group">
+          <div className="bg-black text-white px-2.5 py-1.5 font-display font-extrabold text-lg tracking-tight uppercase border border-black group-hover:bg-neutral-800 transition-colors">
+            ВС
+          </div>
+          <div className="flex flex-col">
+            <span className="font-display font-extrabold text-lg sm:text-xl text-black tracking-tight uppercase flex items-center gap-2 leading-none">
+              <span>Ваш Сантехнік</span>
+              <span className="text-[10px] font-mono-numbers font-semibold border border-black px-1.5 py-0.5 text-neutral-900 tracking-normal hidden sm:inline-block">
+                СЕРГІЙ ПЛАКСА
+              </span>
+            </span>
+            <span className="font-mono-numbers text-[10px] sm:text-[11px] text-neutral-500 uppercase tracking-architectural mt-1">
+              Бойлери • Насоси • Труби • Опалення
+            </span>
+          </div>
         </a>
 
         {/* Desktop Links */}
