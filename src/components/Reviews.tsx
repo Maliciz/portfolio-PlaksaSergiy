@@ -1,95 +1,79 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Star, ShieldCheck, MessageSquare, Quote } from 'lucide-react';
+import { Star, ShieldCheck, Quote } from 'lucide-react';
 import { reviewsData } from '../data/reviewsData';
 
 export const Reviews: React.FC = () => {
   return (
-    <section id="reviews" className="py-24 bg-[#0B1320] border-t border-white/5 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="reviews" className="py-28 sm:py-36 bg-transparent border-t border-neutral-200 dark:border-neutral-800/80 relative">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
         
-        {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-amber-400 text-xs font-bold uppercase tracking-wider mb-4">
-              <MessageSquare className="w-3.5 h-3.5" />
-              <span>Репутація, перевірена часом</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
-              Відгуки замовників
+        {/* Section Header */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-20 gap-8">
+          <div className="max-w-3xl">
+            <span className="font-mono-numbers text-xs uppercase tracking-architectural text-neutral-500 dark:text-neutral-400 block mb-4">
+              08 / Client Endorsements
+            </span>
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-normal font-serif text-neutral-900 dark:text-white tracking-editorial leading-tight">
+              Репутація, перевірена роками
             </h2>
-            <p className="mt-3 text-slate-300 text-base sm:text-lg max-w-2xl">
-              Справжні враження власників квартир і котеджів після здачі сантехнічних вузлів та опалювальних систем.
+            <p className="mt-4 text-base sm:text-lg text-neutral-600 dark:text-neutral-400 font-light leading-relaxed">
+              Відгуки власників нерухомості та авторів дизайн-проєктів про бездоганну точність, терміни та довговічність виконаних вузлів.
             </p>
           </div>
 
-          {/* Google 5.0 Rating Badge */}
-          <div className="p-4 rounded-2xl bg-slate-900 border border-amber-500/30 flex items-center gap-4 shrink-0 shadow-lg">
-            <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-400 font-extrabold text-xl font-mono-numbers">
-              5.0
+          <div className="shrink-0 flex items-center gap-3 font-mono-numbers text-xs text-neutral-600 dark:text-neutral-400">
+            <span className="text-neutral-900 dark:text-white font-bold text-lg">5.0</span>
+            <div className="flex text-neutral-900 dark:text-white">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-4 h-4 fill-current" />
+              ))}
             </div>
-            <div>
-              <div className="flex text-amber-400 gap-0.5 mb-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                ))}
-              </div>
-              <p className="text-xs text-slate-400 font-medium">
-                100% позитивних відгуків (48 зданих об'єктів)
-              </p>
-            </div>
+            <span>• 100% задоволених клієнтів</span>
           </div>
         </div>
 
-        {/* Reviews Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {reviewsData.map((item, index) => (
+        {/* Editorial Reviews Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {reviewsData.map((review, index) => (
             <motion.div
-              key={item.id}
-              className="rounded-2xl p-7 bg-slate-900/70 border border-white/10 hover:border-sky-500/40 transition-all duration-300 flex flex-col justify-between relative shadow-lg"
-              initial={{ opacity: 0, y: 30 }}
+              key={review.id}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
+              className="p-8 sm:p-9 rounded-2xl bg-neutral-100/40 dark:bg-neutral-900/30 border border-neutral-200 dark:border-neutral-800 flex flex-col justify-between"
             >
               <div>
-                {/* Top: Stars and quote icon */}
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex text-amber-400 gap-1">
-                    {[...Array(item.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                    ))}
-                  </div>
-                  <Quote className="w-6 h-6 text-slate-700" />
+                {/* Complex / Location */}
+                <div className="flex items-center justify-between font-mono-numbers text-xs uppercase tracking-architectural text-neutral-400 dark:text-neutral-500 mb-6">
+                  <span>{review.location}</span>
+                  <span>{review.date}</span>
                 </div>
 
-                {/* Review Text */}
-                <p className="text-sm text-slate-300 leading-relaxed mb-6 italic">
-                  "{item.reviewText}"
+                <Quote className="w-8 h-8 text-neutral-300 dark:text-neutral-700 mb-4" />
+
+                <p className="text-sm text-neutral-700 dark:text-neutral-300 font-light leading-relaxed mb-8">
+                  "{review.reviewText}"
                 </p>
               </div>
 
-              {/* Author & Location */}
-              <div className="pt-4 border-t border-white/5 flex items-center justify-between">
+              <div className="pt-6 border-t border-neutral-200 dark:border-neutral-800/80 flex items-center justify-between">
                 <div>
-                  <h4 className="text-sm font-bold text-white flex items-center gap-1.5">
-                    <span>{item.authorName}</span>
-                    {item.verified && (
-                      <span title="Підтверджений замовник">
-                        <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                      </span>
-                    )}
+                  <h4 className="text-sm font-serif font-normal text-neutral-900 dark:text-white">
+                    {review.authorName}
                   </h4>
-                  <span className="text-xs text-slate-400">{item.location}</span>
-                </div>
-                <div className="text-right">
-                  <span className="text-[11px] text-sky-400 font-mono-numbers block font-medium">
-                    {item.date}
-                  </span>
-                  <span className="text-[10px] text-slate-500 line-clamp-1 max-w-[120px]">
-                    {item.serviceType}
+                  <span className="text-xs text-neutral-500 dark:text-neutral-400 font-light">
+                    {review.serviceType}
                   </span>
                 </div>
+
+                {review.verified && (
+                  <span className="text-[11px] font-mono-numbers text-emerald-600 dark:text-emerald-400 flex items-center gap-1">
+                    <ShieldCheck className="w-3.5 h-3.5" />
+                    Перевірено
+                  </span>
+                )}
               </div>
             </motion.div>
           ))}

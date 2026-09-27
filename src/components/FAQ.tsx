@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { HelpCircle, ChevronDown } from 'lucide-react';
+import { Plus, Minus } from 'lucide-react';
 import { faqData } from '../data/faqData';
 
 export const FAQ: React.FC = () => {
@@ -10,54 +10,49 @@ export const FAQ: React.FC = () => {
   };
 
   return (
-    <section className="py-24 bg-[#0B1320] border-t border-white/5 relative">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-28 sm:py-36 bg-transparent border-t border-neutral-200 dark:border-neutral-800/80 relative">
+      <div className="max-w-4xl mx-auto px-5 sm:px-8">
         
-        {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-sky-400 text-xs font-bold uppercase tracking-wider mb-4">
-            <HelpCircle className="w-3.5 h-3.5" />
-            <span>Відповіді на важливі питання</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+        {/* Section Header */}
+        <div className="mb-16">
+          <span className="font-mono-numbers text-xs uppercase tracking-architectural text-neutral-500 dark:text-neutral-400 block mb-4">
+            09 / Inquiry & Answers
+          </span>
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-normal font-serif text-neutral-900 dark:text-white tracking-editorial leading-tight">
             Часті запитання
           </h2>
-          <p className="mt-3 text-slate-300 text-base sm:text-lg">
-            Усе, що потрібно знати перед початком інженерних сантехнічних робіт.
+          <p className="mt-4 text-base sm:text-lg text-neutral-600 dark:text-neutral-400 font-light leading-relaxed">
+            Ключові технічні нюанси щодо матеріалів, опресування, гарантійних зобов'язань та організації процесу.
           </p>
         </div>
 
-        {/* Accordion list */}
-        <div className="space-y-4">
+        {/* Clean Hairline Accordion */}
+        <div className="divide-y divide-neutral-200 dark:divide-neutral-800 border-y border-neutral-200 dark:border-neutral-800">
           {faqData.map((item, index) => {
             const isOpen = openIndex === index;
 
             return (
-              <div
-                key={index}
-                className="rounded-2xl border border-white/10 bg-slate-900/60 overflow-hidden transition-all duration-200"
-              >
+              <div key={index} className="py-6">
                 <button
                   onClick={() => toggle(index)}
-                  className="w-full flex items-center justify-between p-6 text-left focus:outline-none hover:bg-slate-800/30 transition-colors"
+                  className="w-full flex items-start justify-between text-left gap-6 group"
                 >
-                  <div className="flex items-center gap-3 pr-4">
-                    <span className="text-xs font-mono-numbers text-sky-400 font-bold px-2 py-0.5 rounded bg-sky-950 border border-sky-800 shrink-0">
+                  <div className="flex flex-col">
+                    <span className="font-mono-numbers text-[10px] uppercase tracking-architectural text-neutral-400 dark:text-neutral-500 mb-1">
                       {item.tag}
                     </span>
-                    <span className="text-base sm:text-lg font-bold text-white leading-snug">
+                    <span className="text-lg sm:text-xl font-serif text-neutral-900 dark:text-white group-hover:text-neutral-600 dark:group-hover:text-neutral-300 transition-colors">
                       {item.question}
                     </span>
                   </div>
-                  <ChevronDown
-                    className={`w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300 ${
-                      isOpen ? 'rotate-180 text-sky-400' : ''
-                    }`}
-                  />
+                  
+                  <div className="w-8 h-8 rounded-full border border-neutral-200 dark:border-neutral-800 flex items-center justify-center shrink-0 text-neutral-700 dark:text-neutral-300 group-hover:border-neutral-900 dark:group-hover:border-white transition-colors mt-1">
+                    {isOpen ? <Minus className="w-3.5 h-3.5" /> : <Plus className="w-3.5 h-3.5" />}
+                  </div>
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 pb-6 pt-1 text-sm sm:text-base text-slate-300 leading-relaxed border-t border-white/5 bg-slate-950/40">
+                  <div className="mt-4 pr-12 text-sm sm:text-base text-neutral-600 dark:text-neutral-400 font-light leading-relaxed animate-in fade-in duration-200">
                     {item.answer}
                   </div>
                 )}

@@ -25,10 +25,8 @@ export const submitBooking = async (formData: BookingFormValues): Promise<Bookin
       source: window.location.hostname,
     });
     return response.data;
-  } catch (error) {
-    // Graceful fallback for single-page portfolio deployment
-    // Logs the lead, saves locally to simulate full production lifecycle
-    console.info('API call fallback mode active (demonstration/static hosting). Saving lead locally:', formData);
+  } catch (err) {
+    console.warn('API call fallback mode active (demonstration/static hosting):', err);
     
     // Save to localStorage for demo persistence
     try {

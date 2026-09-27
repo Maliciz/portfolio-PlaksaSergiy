@@ -1,148 +1,116 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  ShieldCheck, 
-  Wrench, 
-  FileSpreadsheet, 
-  Sparkles, 
-  CheckCircle, 
-  Cpu, 
-  Gauge, 
-  Crosshair 
-} from 'lucide-react';
+import { Shield, Wrench, Crosshair, FileCheck2, ArrowUpRight } from 'lucide-react';
 
 export const Advantages: React.FC = () => {
-  const advantages = [
+  const pillars = [
     {
-      icon: ShieldCheck,
-      title: 'Офіційна гарантія на всі вузли',
-      description: '5 років безумовної гарантії на монтажні роботи за офіційним договором. Додатково діє офіційна гарантія виробників труб Rehau та TECE до 50 років.',
-      badge: 'Гарантія 5 років',
-      highlightColor: 'sky',
+      number: '01',
+      title: 'Гідравлічний стрес-тест 10.0 bar',
+      description: 'Перед заливкою стяжки кожен контур та вузол витримується під надлишковим тиском 10–12 бар протягом 24 годин із фото- та відеофіксацією манометрів у договорі.',
+      metric: '24-годинний протокол випробувань',
+      icon: Shield,
     },
     {
+      number: '02',
+      title: 'Акумуляторний прес-інструмент Rems & Rehau',
+      description: 'Монтаж нерозбірних гільзових з’єднань проводиться оригінальними автоматичними пресами. Це на 100% унеможливлює людський фактор і гарантує герметичність на 50+ років.',
+      metric: 'Оригінальні німецькі прес-клещі',
       icon: Wrench,
-      title: 'Професійний прес-інструмент',
-      description: 'Монтаж проводиться оригінальним акумуляторним інструментом Rems, Rehau Rautool та Milwaukee. Це повністю виключає людський фактор і забезпечує 100% герметичність з\'єднань.',
-      badge: 'Rems & Rehau Tools',
-      highlightColor: 'amber',
     },
     {
-      icon: FileSpreadsheet,
-      title: 'Фіксований кошторис до початку робіт',
-      description: 'Жодних прихованих доплат у процесі монтажу. Ви отримуєте прозору специфікацію з деталізацією вартості кожного фітинга та виду робіт до старту.',
-      badge: 'Точність до гривні',
-      highlightColor: 'sky',
+      number: '03',
+      title: 'Лазерна вивірка геометрії до ±0.5 мм',
+      description: 'Усі водорозетні планки, інсталяції та трапи виставляються за 3D-лазерними нівелірами. Жодних перекосів або щілин під час чистового монтажу керамограніту та змішувачів.',
+      metric: 'Ювелірна точність під плитку',
+      icon: Crosshair,
     },
     {
-      icon: Sparkles,
-      title: 'Акуратність та чистота на об\'єкті',
-      description: 'Використання будівельного пилососа класу M під час штроблення, захист чистових поверхонь плівкою, чітке маркування всіх труб та прибирання сміття після завершення.',
-      badge: 'Робота без пилу',
-      highlightColor: 'amber',
+      number: '04',
+      title: 'Фіксований кошторис та 5 років гарантії',
+      description: 'Ви отримуєте прозору специфікацію робіт та матеріалів до початку робіт. Сума договору не збільшується під час процесу, а на всі виконані вузли діє 5-річна гарантія.',
+      metric: 'Офіційний договір ФОП',
+      icon: FileCheck2,
     },
   ];
 
   const standards = [
-    { label: 'Лазерне нівелювання', desc: 'Виставлення всіх випусків за лазером з точністю до ±1 мм', icon: Crosshair },
-    { label: 'Опресування 10–12 бар', desc: 'Добовий гідравлічний стрес-тест перед заливкою стяжки', icon: Gauge },
-    { label: 'Колекторна розводка', desc: 'Окремий промінь на кожну точку без трійників у підлозі', icon: Cpu },
-    { label: 'Термоізоляція K-Flex', desc: 'Захист від конденсату та втрат теплової енергії', icon: CheckCircle },
+    { code: 'DIN 1988', label: 'Європейський стандарт проєктування питних мереж' },
+    { code: 'EN 1264', label: 'Теплотехнічний розрахунок водяної теплої підлоги' },
+    { code: 'REHAU & TECE', label: 'Офіційна сертифікація монтажних технологій' },
+    { code: 'K-FLEX PE', label: 'Безшовна термоізоляція та акустичний демпфер' },
   ];
 
   return (
-    <section id="advantages" className="py-24 bg-[#0B1320] relative overflow-hidden">
-      {/* Subtle background glow */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-sky-600/10 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-amber-600/10 rounded-full blur-[140px] pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="advantages" className="py-28 sm:py-36 bg-transparent relative border-t border-neutral-200 dark:border-neutral-800/80">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-sky-400 text-xs font-bold uppercase tracking-wider mb-4">
-            <Cpu className="w-3.5 h-3.5" />
-            <span>Інженерний підхід та стандарти</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
-            Чому клієнти обирають мене для складних завдань
+        <div className="max-w-3xl mb-20">
+          <span className="font-mono-numbers text-xs uppercase tracking-architectural text-neutral-500 dark:text-neutral-400 block mb-4">
+            03 / Standards & Code
+          </span>
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-normal font-serif text-neutral-900 dark:text-white tracking-editorial leading-tight">
+            Інженерний кодекс та безкомпромісна якість
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-slate-300">
-            Без компромісів щодо безпеки, довговічності та естетики. Кожен вузол монтується з розрахунком на десятиліття безтурботної експлуатації.
+          <p className="mt-4 text-base sm:text-lg text-neutral-600 dark:text-neutral-400 font-light leading-relaxed">
+            Сантехніка — це найкритичніша інфраструктура житла. Вона схована в стінах і стяжці на десятиліття, тому тут немає місця компромісам, випадковим матеріалам чи поспіху.
           </p>
         </div>
 
-        {/* 4 Core Pillars Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-16">
-          {advantages.map((item, index) => {
-            const Icon = item.icon;
-            const isAmber = item.highlightColor === 'amber';
-
+        {/* 4 Architectural Pillars Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+          {pillars.map((pillar, index) => {
+            const Icon = pillar.icon;
             return (
               <motion.div
                 key={index}
-                className={`rounded-2xl p-8 transition-all duration-300 relative group overflow-hidden ${
-                  isAmber ? 'tech-card-copper' : 'tech-card'
-                }`}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="group p-8 sm:p-10 rounded-2xl bg-neutral-100/50 dark:bg-neutral-900/40 border border-neutral-200 dark:border-neutral-800 hover:border-neutral-400 dark:hover:border-neutral-600 transition-all duration-300 flex flex-col justify-between"
               >
-                {/* Top Badge and Icon */}
-                <div className="flex items-center justify-between mb-6">
-                  <div className={`w-14 h-14 rounded-xl flex items-center justify-center transition-transform group-hover:scale-110 duration-300 ${
-                    isAmber ? 'bg-amber-500/15 text-amber-400 border border-amber-500/30' : 'bg-sky-500/15 text-sky-400 border border-sky-500/30'
-                  }`}>
-                    <Icon className="w-7 h-7" />
+                <div>
+                  <div className="flex items-center justify-between mb-8">
+                    <span className="font-mono-numbers text-2xl font-light text-neutral-400 dark:text-neutral-600 group-hover:text-neutral-900 dark:group-hover:text-white transition-colors">
+                      {pillar.number}
+                    </span>
+                    <div className="w-10 h-10 rounded-full border border-neutral-300 dark:border-neutral-800 flex items-center justify-center text-neutral-600 dark:text-neutral-300 group-hover:bg-neutral-900 group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-neutral-900 transition-colors">
+                      <Icon className="w-4 h-4" />
+                    </div>
                   </div>
-                  <span className={`text-xs font-semibold px-3 py-1 rounded-full border ${
-                    isAmber ? 'bg-amber-950/60 text-amber-300 border-amber-500/30' : 'bg-sky-950/60 text-sky-300 border-sky-500/30'
-                  }`}>
-                    {item.badge}
-                  </span>
+
+                  <h3 className="text-xl sm:text-2xl font-serif text-neutral-900 dark:text-white mb-3 leading-snug">
+                    {pillar.title}
+                  </h3>
+
+                  <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed font-light">
+                    {pillar.description}
+                  </p>
                 </div>
 
-                {/* Content */}
-                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-sky-300 transition-colors">
-                  {item.title}
-                </h3>
-                <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-                  {item.description}
-                </p>
+                <div className="mt-8 pt-4 border-t border-neutral-200 dark:border-neutral-800 flex items-center justify-between font-mono-numbers text-xs text-neutral-500 dark:text-neutral-400 uppercase tracking-wider">
+                  <span>{pillar.metric}</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </div>
               </motion.div>
             );
           })}
         </div>
 
-        {/* Technical Engineering Checklist Bar */}
-        <div className="rounded-2xl bg-slate-900/90 border border-white/10 p-6 sm:p-8 backdrop-blur-md">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-6 border-b border-white/10">
-            <div>
-              <h4 className="text-lg font-bold text-white">Технічний кодекс монтажу</h4>
-              <p className="text-xs sm:text-sm text-slate-400">Стандарти, які я неухильно дотримуюся на кожному об'єкті</p>
+        {/* Technical Standards Tape */}
+        <div className="mt-16 pt-12 border-t border-neutral-200 dark:border-neutral-800/80 grid grid-cols-2 md:grid-cols-4 gap-6">
+          {standards.map((std, i) => (
+            <div key={i} className="flex flex-col">
+              <span className="font-mono-numbers text-sm font-semibold tracking-architectural text-neutral-900 dark:text-white uppercase">
+                {std.code}
+              </span>
+              <span className="text-xs text-neutral-500 dark:text-neutral-400 font-light mt-1">
+                {std.label}
+              </span>
             </div>
-            <div className="inline-flex items-center gap-2 text-xs font-mono-numbers text-sky-400 bg-sky-950/60 px-3 py-1.5 rounded-lg border border-sky-800 self-start md:self-auto">
-              <span>DIN EN 806 • ДБН В.2.5-67</span>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {standards.map((std, i) => {
-              const StdIcon = std.icon;
-              return (
-                <div key={i} className="flex items-start gap-3">
-                  <div className="p-2 rounded-lg bg-slate-800 text-sky-400 shrink-0 mt-0.5 border border-slate-700">
-                    <StdIcon className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <h5 className="text-sm font-bold text-slate-200">{std.label}</h5>
-                    <p className="text-xs text-slate-400 mt-0.5 leading-snug">{std.desc}</p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+          ))}
         </div>
 
       </div>

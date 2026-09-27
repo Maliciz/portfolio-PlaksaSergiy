@@ -1,18 +1,13 @@
-export type ServiceCategory = 'all' | 'boilers' | 'underfloor' | 'bathrooms' | 'filtration';
+export type ServiceCategory = 'all' | 'boilers' | 'pumps' | 'pipes' | 'underfloor' | 'bathrooms';
 
 export interface ServiceItem {
   id: string;
   title: string;
   category: ServiceCategory;
   shortDesc: string;
-  fullDesc: string;
   priceFrom: number;
   priceUnit: string;
-  iconName: string;
-  popular?: boolean;
   features: string[];
-  warrantyYears: number;
-  standards: string[];
 }
 
 export interface PortfolioProject {
@@ -21,18 +16,28 @@ export interface PortfolioProject {
   category: ServiceCategory;
   categoryLabel: string;
   location: string;
-  residentialComplex: string;
-  year: string;
-  durationDays: number;
   materials: string[];
   coverImage: string;
-  galleryImages: string[];
   description: string;
-  results: string[];
-  systemSpecs: {
-    label: string;
-    value: string;
-  }[];
+}
+
+export interface BookingFormValues {
+  name: string;
+  phone: string;
+  service: string;
+  propertyType?: string;
+  date?: string | null;
+  comment?: string;
+  estimatedBudget?: string;
+}
+
+export interface PriceItem {
+  id: string;
+  serviceName: string;
+  unit: string;
+  priceUah: number;
+  category: string;
+  note?: string;
 }
 
 export interface Testimonial {
@@ -45,25 +50,6 @@ export interface Testimonial {
   serviceType: string;
   reviewText: string;
   verified: boolean;
-}
-
-export interface BookingFormValues {
-  name: string;
-  phone: string;
-  propertyType: string;
-  service: string;
-  date: string | null;
-  comment: string;
-  estimatedBudget?: string;
-}
-
-export interface PriceItem {
-  id: string;
-  serviceName: string;
-  unit: string;
-  priceUah: number;
-  category: string;
-  note?: string;
 }
 
 export interface FAQItem {
